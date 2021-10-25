@@ -1,0 +1,63 @@
+<nav id="nav" class="uk-navbar uk-navbar-container uk-margin">
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-toggle" href="#">
+      <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+    </a>
+  </div>
+</nav>
+
+
+
+<div class="uk-flex uk-flex-center" [hidden]="!isVisible">
+  <div uk-spinner></div>
+</div>
+
+
+<div class="div-page-content">
+
+  <table class="uk-table" [hidden]="isVisible">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Date Registration</th>
+        <th>Date Last Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users; let i = index;">
+
+        <td name="userID">{{user.userID}}</td>
+
+        <td>
+          <input required type="date" [value]="user.dateRegistration | dateInLocalFormat" (change)="onChangedRegistration($event, i)">
+        </td>
+
+        <td>
+          <input required type="date" [value]="user.dateLastActivity | dateInLocalFormat" (change)="onChangedLastActivity($event, i)">
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+  <button class="uk-button uk-button-primary" (click)="saveUsers()">Save</button>
+
+  <button class="uk-button uk-button-danger" (click)="calcStats()">Calculate</button>
+  <br>
+  Rolling Retention <input required maxlength=3 size=3 type="text" [(ngModel)]="rollingRetentionDay" name="rollingRetentionDay"> day = {{rollingRetention}}
+
+
+  <div id="container">
+
+  </div>
+
+
+
+</div>

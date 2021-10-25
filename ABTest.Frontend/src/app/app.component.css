@@ -1,0 +1,49 @@
+
+body{
+    margin-left: 20px;
+}
+
+ul {
+
+    list-style-type: none;
+    padding: 0; 
+    margin-left: 0; 
+}
+
+li {
+
+    
+    margin: 5px 0px 5px 10px; 
+}
+
+.caption-tree-group{
+    font-size: 17px;
+    --font-weight: bold;
+    color: steelblue;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar.mat-primary {
+    background: steelblue !important;
+    
+}  
+
+.div-page-content{
+
+    padding: 0px 0px 0px 20px;
+}
+
+table{
+    margin: 0px 0px 20px 0px;
+}
+
+button{
+    margin: 0px 20px 20px 0px;
+}
+
+th{
+    font-weight: bold;
+}
